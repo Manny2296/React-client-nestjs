@@ -1,0 +1,28 @@
+import { useRouter } from 'next/router';
+import Layout from '../component/layout';
+
+/*const Content = () => {
+  const router = useRouter();
+  return (
+    <>
+      <h1>{router.query.titre}</h1>
+      <p>Celui ci c'est le contenu du Blog </p>
+    </>
+  );
+};
+const Page = () => {
+    <Layout>
+        <Content/>
+    </Layout>
+}*/
+export default function Post() {
+    const router = useRouter();
+  
+    return (
+      <Layout>
+        <h1>{router.query.id}</h1>
+        <p>This is the blog post content.</p>
+      </Layout>
+    );
+  }
+//export default Page;

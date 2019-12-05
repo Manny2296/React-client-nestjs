@@ -1,0 +1,37 @@
+import Link from 'next/link';
+import Layout from '../component/layout';
+//import Layout from '../component/mylayout';
+/* Method 1   Layout as a Higher Order Component 
+const Index = () => (
+
+     
+    <p>Bonjour Next.js</p>
+
+)
+*/
+/* <Link href={`/post?titre=${props.titre}`}>
+            <a>{props.titre}</a>
+        </Link> */
+const PostLink = props => (
+    <li>
+       <Link href="/p/[id]" as={`/p/${props.id}`}>
+      <a>{props.id}</a>
+    </Link>
+    </li>
+)
+/** Method 2 - Page content as a prop */
+
+export default function Blog(){
+    return(
+    <Layout>
+        <h1>My blog</h1>
+        <ul>
+            <PostLink id="hello-nextjs"/>
+            <PostLink id="learn-nextjs"/>
+            <PostLink id="deploy-nextjs"/>
+            
+        </ul>
+    </Layout>
+    )  //Metode 2
+} 
+// export default withLayout(Index); //Metode 1
